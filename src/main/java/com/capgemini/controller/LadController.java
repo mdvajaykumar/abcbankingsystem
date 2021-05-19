@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.capgemini.service.CustomerLoanReportImpl;
+import com.capgemini.service.ICustomerLoanReportImpl;
 
 
 @RestController
@@ -16,11 +16,11 @@ import com.capgemini.service.CustomerLoanReportImpl;
 public class LadController {
 
 	@Autowired
-	CustomerLoanReportImpl customerloanreportimpl;
+	ICustomerLoanReportImpl icustomerloanreportimpl;
 	
-	@GetMapping("/{customerid}")
-	public String checklad(@PathVariable int customerid) {
-		String s1 = customerloanreportimpl.hello(customerid);
-		return  s1;
+	@GetMapping("/{id}")
+	public String checklad(@PathVariable int id) {
+		String s1=icustomerloanreportimpl.hello(id);
+		return s1;
 	}
 }

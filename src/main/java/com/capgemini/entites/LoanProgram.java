@@ -14,5 +14,7 @@ public class LoanProgram {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int loanid;
 	private String loantype;
+	private double maximaumage;
+	private double minimumage;
 
 }
