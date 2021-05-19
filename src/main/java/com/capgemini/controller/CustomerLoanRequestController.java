@@ -17,7 +17,7 @@ import com.capgemini.exception.CustomerLoanRequestNotFoundException;
 import com.capgemini.service.CustomerLoanRequestImpl;
 
 @RestController
-@RequestMapping("api/customerloanrequest/")
+@RequestMapping("/api/customerloanrequest/")
 public class CustomerLoanRequestController {
 	
 	@Autowired
