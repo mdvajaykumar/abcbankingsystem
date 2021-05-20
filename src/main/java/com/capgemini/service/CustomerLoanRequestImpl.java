@@ -28,10 +28,13 @@ public class CustomerLoanRequestImpl implements ICustomerLoanRequestService {
 		}
 
 		CustomerLoanRequest ld = customerLoanRequestRepository.findById(id).get();
-		ld.setId(customerLoanRequest.getId());
-		customerLoanRequestRepository.save(ld);
+		//ld.setId(customerLoanRequest.getId());
+		if(customerLoanRequest.getCity()!=null) {
+			ld.setCity(customerLoanRequest.getCity());
+			}
+			customerLoanRequestRepository.save(ld);
 
-		return "Customer Details Added!";
+			return "Customer Details updated!";
 	}
 
 	@Override

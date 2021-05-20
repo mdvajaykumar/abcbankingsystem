@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.capgemini.entites.CustomerLoanRequest;
-import com.capgemini.exception.CustomerLoanRequestNotFoundException;
 import com.capgemini.service.CustomerLoanRequestImpl;
 
 @RestController

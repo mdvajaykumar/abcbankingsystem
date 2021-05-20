@@ -1,10 +1,11 @@
 package com.capgemini.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.capgemini.entites.CustomerLoanRequest;
-import com.capgemini.entites.LoanProgram;
 import com.capgemini.entites.LoanStatus;
 import com.capgemini.exception.CustomerLoanRequestNotFoundException;
 import com.capgemini.repository.CustomerLoanRequestRepository;
@@ -269,6 +270,18 @@ public class ICustomerLoanReportImpl implements ICustomerLoanReport {
 		return "your loan amount is" + " " + Double.toString(loanamount) + "              " + "your tenure is" + " "
 				+ Double.toString(tenure) + "years" + "     " + " your emi is " + "   " + Double.toString(emi);
 		
-		
 	}
+	
+	@Override
+	public List<LoanStatus> findallrecords() {
+		return loanstatusRepository.findAll();
+	}
+
+	@Override
+	public String deleteById(int id) {
+		loanstatusRepository.deleteById(id);
+		return "LoanStatus is Deleted Sucessfully";
+	}
+	
+	
 }
